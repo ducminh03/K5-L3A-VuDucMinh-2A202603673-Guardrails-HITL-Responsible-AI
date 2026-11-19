@@ -113,8 +113,6 @@ def topic_filter(user_input: str) -> InputStatus:
             return "BLOCK"
 
     allowed_topics = [_normalize_security_text(topic) for topic in ALLOWED_TOPICS]
-    # "chuyen khoan" is a common Vietnamese equivalent for "transfer".
-    allowed_topics.append("chuyen khoan")
     if any(topic in normalized for topic in allowed_topics):
         return "ALLOW"
     return "BLOCK"
